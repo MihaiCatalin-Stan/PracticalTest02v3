@@ -90,23 +90,7 @@ class CommunicationThread(private val serverThread: ServerThread, private val so
 
             Log.i(Constants.TAG, "[COMMUNICATION THREAD] PageSourceCode: $pageSourceCode")
 
-//            val content = JSONObject(pageSourceCode)
-//
-//            // main object
-//            val main = content.getJSONObject("0")
-//            Log.i(Constants.TAG, "[COMM_THREAD] main $main")
-//            val meanings = main.getJSONObject("meanings")
-//            Log.i(Constants.TAG, "[COMM_THREAD] meanings $meanings")
-//            val sub_main = meanings.getJSONObject("0")
-//            Log.i(Constants.TAG, "[COMM_THREAD] sub_main $sub_main")
-//            val defs = sub_main.getJSONObject("definitions")
-//            Log.i(Constants.TAG, "[COMM_THREAD] defs $defs")
-//            val last_main = defs.getJSONObject("0")
-//            Log.i(Constants.TAG, "[COMM_THREAD] last_main $last_main")
-//            val definition = last_main.getString("definition").toString()
             val definition = pageSourceCode.split("\"definition\":\"", "\",\"synonyms\"")[1]
-
-//            Log.i(Constants.TAG, "[COMMUNICATION THREAD] main = $main | meanings = $meanings | sub_main = $sub_main | defs = $defs | last_main = $last_main | definition = $definition")
 
             var result: String = definition
 
